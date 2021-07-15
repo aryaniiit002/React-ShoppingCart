@@ -8,7 +8,7 @@ export const SingleProduct = (props) => {
 
     return (
         <div className="container mx-auto mt-12">
-            <button className="mb-12 font-bold" 
+            <button className=" text-3xl md:text-2xl mb-12 font-bold" 
             onClick={ () => { history.goBack() } }>Back</button>
             <div className="flex ">
             <img src={`/images/${name}.jpg`} alt="pizza" />

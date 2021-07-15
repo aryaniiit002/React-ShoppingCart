@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Products from '../components/Products';
 
 export const ProductPage = () => {
     return (
         <div>
-            Product Page!
+            <Products />
         </div>
     )
 }
