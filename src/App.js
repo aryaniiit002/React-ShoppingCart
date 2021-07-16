@@ -6,16 +6,22 @@ import SingleProduct from './pages/SingleProduct';
 import Navigation from './components/Navigation';
 import Cart from './pages/Cart';
 import { CartContext } from './CartContext';
-import products from './api/products';
+// import products from './api/products';
+import { getCart, storeCart } from './helpers';
 
 const App = () => {
 
     const [cart, setCart] = useState({});
     // Fetch cart from local storage
     useEffect(() => {
-        const cart = window.localStorage.getItem('cart');
-
+        getCart().then(cart => {
+        setCart(JSON.parse(cart));
+        });
     }, []);
+    
+    useEffect(() => {
+        storeCart(JSON.stringify(cart));
+    }, [cart]);
 
     return (
         <>
