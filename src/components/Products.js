@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Product from './Product';
 import api from '../api/products';
+import { CartContext } from '../CartContext';
 
 export const Products = () => {
     const [products, setProducts] = useState([]);
+    // const { name } = useContext(CartContext);
+
 
     const retrieveProducts = async () => {
         const response = await api.get("/products");
