@@ -43,7 +43,9 @@ export const Product = (props) => {
                 </div>
                 <div className="flex justify-between items-center mt-4">
                     <span>{price}</span>
-                    <button disabled={isAdding} onClick={(e) => { addToCart(e, props.product) }} className={`${ isAdding ? 'bg-green-500': 'bg-yellow-500' } py-1 px-4 rounded-full font-bold`}>ADD{isAdding ? 'ED': ''}</button>
+                    <button disabled={isAdding} 
+                    onClick={(e) => { addToCart(e, props.product) }} 
+                    className={`${ isAdding ? 'bg-green-500': 'bg-yellow-500' } py-1 px-4 rounded-full font-bold`}>ADD{isAdding ? 'ED': ''}</button>
                 </div>
             </div>
             </>
