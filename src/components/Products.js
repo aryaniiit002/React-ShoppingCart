@@ -1,12 +1,9 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import Product from './Product';
 import api from '../api/products';
-import { CartContext } from '../CartContext';
 
 export const Products = () => {
     const [products, setProducts] = useState([]);
-    // const { name } = useContext(CartContext);
-
 
     const retrieveProducts = async () => {
         const response = await api.get("/products");
@@ -14,13 +11,6 @@ export const Products = () => {
     };
     
     useEffect(() => {
-        // fetch('/api/products')
-        // .then(response => {
-        //     response.json()
-        // })
-        // .then(products => {
-        //     setProducts(products);
-        // });
 
         const getAllProducts = async () => {
             const allProducts = await retrieveProducts();
@@ -30,12 +20,13 @@ export const Products = () => {
 
         getAllProducts();
     }, []);
+
     return (
         <div className="container mx-auto pb-24">
             <h1 className="text-3xl md:text-3xl font-bold my-8">Products</h1>
             <div className="grid grid-cols-5 my-8 gap-24">
                 {
-                   products.map(product => <Product key={product.id} product={product}/>)
+                   products.map(product => <Product key={product._id} product={product}/>)
                 }
             </div>
         </div>

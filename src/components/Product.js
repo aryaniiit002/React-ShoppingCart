@@ -42,7 +42,7 @@ export const Product = (props) => {
                     <span className="bg-gray-200 py-1 rounded-full text-sm px-4">{size}</span>
                 </div>
                 <div className="flex justify-between items-center mt-4">
-                    <span>{price}</span>
+                    <span>₹ {price}</span>
                     <button disabled={isAdding} 
                     onClick={(e) => { addToCart(e, props.product) }} 
                     className={`${ isAdding ? 'bg-green-500': 'bg-yellow-500' } py-1 px-4 rounded-full font-bold`}>ADD{isAdding ? 'ED': ''}</button>

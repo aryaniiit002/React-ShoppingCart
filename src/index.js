@@ -1,8 +1,8 @@
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import './Index.css';
-import App from './App'
+import App from './App';
 
-ReactDom.render(
+ReactDOM.render(
     <App />,
     document.getElementById('root')
-)
+);

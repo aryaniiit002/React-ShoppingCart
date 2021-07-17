@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 export const SingleProduct = (props) => {
@@ -15,7 +14,7 @@ export const SingleProduct = (props) => {
                 <div className="ml-16">
                     <h1 className="text-xl font-bold">{ name }</h1>
                     <div className="text-md">{ size }</div>
-                    <div className="font-bold mt-2"> { price }</div>
+                    <div className="font-bold mt-2">₹ { price }</div>
                     <button className="bg-yellow-500 py-1 px-8 rounded-full font-bold mt-4">Add to cart</button>
                 </div>
             </div>
