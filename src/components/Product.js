@@ -10,10 +10,20 @@ export const Product = (props) => {
 
     const addToCart = (event, product) => {
         event.preventDefault();
-        let _cart = {...cart}; //(spread operator) cloning the cart object
+
+        // Cart structure
+        // const cart = {
+        //     items : {
+        //         '608c27f3e165f6137f02b549' : 1,
+        //         '608c280ce165f6137f02b54a' : 2
+        //     },
+        //     totalItems : 3
+        // };
+
+        let _cart = {...cart}; //(spread operator) cloning the exisiting cart object
         if(!_cart.items) {
             //create an emtpy object and we will store id's later in it
-            _cart.items={}
+            _cart.items={};
         }
         if (_cart.items[product._id]) {
             _cart.items[product._id] += 1;
@@ -24,6 +34,7 @@ export const Product = (props) => {
             _cart.totalItems = 0;
         }
         _cart.totalItems += 1;
+        //console.log(Object.keys(_cart.items));
         setCart(_cart);
         setIsAdding(true);
         setTimeout(() => {

@@ -14,13 +14,13 @@ const App = () => {
     const [cart, setCart] = useState({});
     // Fetch cart from local storage
     useEffect(() => {
-        getCart().then(cart => {
+        const cart = window.localStorage.getItem('cart');
         setCart(JSON.parse(cart));
-        });
+        console.log(JSON.parse(cart));
     }, []);
     
     useEffect(() => {
-        storeCart(JSON.stringify(cart));
+        window.localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
 
     return (

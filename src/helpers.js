@@ -6,6 +6,5 @@ export const getCart = () => {
 }
 
 export const storeCart = (cart) => {
-    // we can store string and cart is an object so need to use JSON.stringify
     window.localStorage.setItem('cart', JSON.stringify(cart));
 }

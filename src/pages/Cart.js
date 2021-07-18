@@ -8,7 +8,8 @@ export const Cart = () => {
     const { cart, setCart } = useContext(CartContext);
 
     const [priceFetched, togglePriceFetched] = useState(false);
-    
+    //console.log(cart.items)
+
     useEffect(() => {
 
         if (!cart.items) {
@@ -20,7 +21,6 @@ export const Cart = () => {
         }
 
         const json = JSON.stringify({ ids: Object.keys(cart.items)});
-
         api.post("/products", json, 
         {headers: {
             // Overwrite Axios's automatically set Content-Type
@@ -30,6 +30,7 @@ export const Cart = () => {
             const loadData = () => JSON.parse(products);
             setProducts(loadData);
             togglePriceFetched(true);
+            //console.log(loadData);
         }).catch(function(error) {
             console.log(error);
         })
